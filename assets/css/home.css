@@ -1,0 +1,324 @@
+/* ===========================================
+   PURPOSE HERE V2
+   Home Page Styles
+   File: assets/css/home.css
+   Part: 1/2
+=========================================== */
+
+/* ---------- HERO ---------- */
+
+.hero{
+    width:min(var(--container),92%);
+    margin:auto;
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:80px;
+    padding-top:120px;
+}
+
+.hero-label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--orange);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.82rem;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    max-width:700px;
+    margin-bottom:24px;
+}
+
+.hero-description{
+    max-width:620px;
+    color:var(--text);
+    font-size:1.08rem;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.hero-note{
+    margin-top:60px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.hero-note div{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+}
+
+.hero-note strong{
+    display:block;
+    color:var(--white);
+    margin-bottom:8px;
+}
+
+.hero-note span{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.hero-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-right img{
+    width:100%;
+    max-width:500px;
+    animation:float 5s ease-in-out infinite;
+}
+
+/* ---------- PRODUCTS ---------- */
+
+.products{
+    width:min(var(--container),92%);
+    margin:auto;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:28px;
+}
+
+.product-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+    transition:var(--transition);
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(232,93,44,.4);
+    box-shadow:var(--shadow);
+}
+
+.product-image{
+    aspect-ratio:16/10;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.product-content{
+    padding:28px;
+}
+
+.product-content h3{
+    margin-bottom:12px;
+}
+
+.product-content p{
+    margin-bottom:24px;
+}
+
+.product-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.product-footer a{
+    color:var(--orange);
+    font-weight:600;
+}
+
+.product-footer span{
+    padding:6px 14px;
+    background:rgba(232,93,44,.12);
+    color:var(--orange);
+    border-radius:999px;
+    font-size:.82rem;
+}
+
+.featured{
+    border-color:rgba(232,93,44,.25);
+}
+
+/* ---------- STORY ---------- */
+
+.story{
+    width:min(var(--container),92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.story-image img{
+    width:100%;
+    border-radius:24px;
+}
+
+.story-content p:last-child{
+    margin-top:22px;
+}
+
+/* ---------- BLUEPRINT ---------- */
+
+.blueprint{
+    width:min(var(--container),92%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.blueprint-image img{
+    width:100%;
+    border-radius:24px;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq{
+    width:min(var(--container),92%);
+    margin:auto;
+}
+
+.faq-list{
+    max-width:850px;
+    margin:auto;
+}
+
+.faq-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    margin-bottom:18px;
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+    padding:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--white);
+    font-weight:600;
+    text-align:left;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 24px 24px;
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+/* ---------- CONTACT ---------- */
+
+.contact{
+    width:min(var(--container),92%);
+    margin:auto;
+    text-align:center;
+}
+
+.contact-actions{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-16px);
+    }
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:992px){
+
+    .hero,
+    .story,
+    .blueprint{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-note{
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+        gap:50px;
+        padding-top:140px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-actions{
+        flex-direction:column;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-description{
+        font-size:1rem;
+    }
+
+    .product-content{
+        padding:22px;
+    }
+
+    .faq-question{
+        padding:20px;
+    }
+
+}
